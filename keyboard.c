@@ -1,3 +1,5 @@
+#include "keyboard.h"
+
 
 #define KEYBOARD_BUFFER_SIZE 40
 
@@ -21,6 +23,8 @@ volatile static char keyboard_buffer_top = NULL;
 #define KEY_0 0x27
 
 #define KEY_PERIOD 0x37
+#define KEY_MINUS  0x2D
+
 #define KEY_ENTER 0x28
 
 
@@ -47,4 +51,6 @@ int keyboard_type_ulong(unsigned long value){
   *--temp = 0;
   
   keyboard_buffer_top = temp;
+  
+  return 1;
 }
